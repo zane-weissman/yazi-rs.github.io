@@ -5,7 +5,7 @@ description: Learn how to configure your Yazi theme.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-# theme.toml
+# theme.toml 
 
 :::tip
 If you're looking for ready-made themes and don't want to create one yourself, check out the [yazi-rs/flavors](https://github.com/yazi-rs/flavors) repository.
@@ -77,22 +77,22 @@ Flavor name used in light mode, e.g. `"gruvbox"`.
 ### `background` {#app.background}
 
 Terminal background color. For example:
-- A hexadecimal RGB color: `"#0CE107` or `rgb:0c/e1/o7`
-- A hexadecimal RGBA color: `rgba:D34DB33F`.
+- A hexadecimal RGB color: `"#0CE107"` or `"rgb:0c/e1/o7"`
+- A hexadecimal RGBA color: `"rgba:D34DB33F"`.
 - A hexadecimal RGB color with alpha expressed as a percentage: `"[25]#D34DB3"`
 
 Color format string support for your terminal may vary.
 
 <details>
-	<summary>Terminal compatibility and color formatting details</summary>
+	<summary>Terminal compatibility and color formatting</summary>
 
 This setting uses operating system codes (usually called *OSC*) to set and reset the background color displayed in your terminal. Many modern terminal emulators support this feature, including but not limited to xterm, foot, urxvt, kitty, iTerm2, WezTerm, Ghostty, and Alacritty. 
 
 For this setting to work correctly, your terminal must support `OSC 11`, for setting the background color, and `OSC 111`, for returning to the default background color.
 
-The string identifying the color *typically* can take the form of a hexadecimal color `"#RRGGBB"` or `"rgb:RR/GG/BB"` but **not** `"red"`. Some terminal emulators, including urxvt, WezTerm, and foot, additionally support transparency with `"[aa]#RRGGBB"` or `"rgba:RR/GG/BB/AA`.
+The string identifying the color *typically* can take the form of a hexadecimal color `"#RRGGBB"` or `"rgb:RR/GG/BB"` but **not** color names like `"red"`. Some terminal emulators, including urxvt, WezTerm, and foot, additionally support transparency with `"[aa]#RRGGBB"` or `"rgba:RR/GG/BB/AA"`.
 
-Refer to your terminal emulator's documentation for the most accurate and complete description of color string formats that it supports. You can test various formats directly in your terminal by running 
+Refer to your terminal emulator's documentation for the most accurate and complete description of color string formats that it supports. You can test various formats directly in your terminal by running: 
 ````
 printf "\x1b]11;YOUR-COLOR-STRING-HERE\x07"
 ````
